@@ -117,9 +117,9 @@
         - mkdir -p /home/vagrant/.kube
         - cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
         - chown vagrant:vagrant /home/vagrant/.kube/config
-     - name: Install calico pod network
-       become: false
-       command: kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
+    - name: Install calico pod network
+      become: false
+      command: kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
 
     - name: Generate join command
       command: kubeadm token create --print-join-command
